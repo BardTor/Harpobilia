@@ -1,0 +1,51 @@
+<p>
+  <strong>User:</strong>
+  <%= @order.user.email %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @order.status %>
+</p>
+
+
+
+<table id="customers">
+     <% @total = 0 %>
+    <% @orderitems.each do |id,quantity| %>
+      <tr>
+        <% item = Orderitem.find_by_id(id) %>
+       
+        <td><%= item.title %></td>
+        <td><%= item.quantity %></td>
+       <td><%=number_to_currency(item.price, :unit => "€")%></td> 
+       <td><%= number_to_currency(item.quantity * item.price, :unit => "€") %></td>
+       </tr>
+       
+       <% ototal = (item.quantity * item.price)%>  
+     
+     
+      <% @total += ototal %>
+      
+      </tr>
+    <% end %>
+    
+    
+    <tr>
+        
+       <td>Order Total: &euro; <%= @total %></td>
+       
+       <% shipping = 30 %>
+      <% @overall = shipping + @total%>
+      <tr>
+          <td>Shipping &euro;30</td>
+          <td>You Pay &euro; <%= @overall %></td>
+          
+      </tr>
+     
+
+       
+      </tr>
+</table>
+
+<%= link_to 'Back', orders_path %>

@@ -1,0 +1,8 @@
+<h1>Good Evening</h1>
+<h2>Users</h2>
+<% @users.each do |user| %>
+<p>User Id:<%= user.id %> Email Address: <%= user.email %> Admin: <%= user.admin %>
+<a href="/upgrade/<%= user.id %>" class="button">Upgrade <%= user.email %> Admin</a>
+<a href="/downgrade/<%= user.id %>" class="button">Downgrade <%= user.email %> Admin</a>
+</p>
+<% end %>

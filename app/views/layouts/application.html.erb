@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="application">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+
+  <body>
+    <div id="logomotto">
+    <div class="test"></div>
+    <h2 id="motto">Where all Harp enthusiasts gather already and outsiders soon will...</h2>
+    <header class="headSec">
+    </div>  
+      
+      
+      <ul>
+        <li><%= link_to "HOME", "/" %></li>
+        <li><%= link_to "ITEMS", "/items" %></li>
+        
+
+         <li><a href="/cart" >CART</a></li>
+         
+          
+                
+                
+         <% if user_signed_in? %>
+                 <li><%= link_to "ADMIN", "/admin" %></li>
+                 <li><%= link_to 'EDIT PROFILE', edit_user_registration_path %></li>
+                 <li><%= link_to 'SIGN OUT', destroy_user_session_path, :method => :delete %></li>
+                 <li><a href="#"><%= current_user.email %></a></li>
+                 <li><a href="/orders">VIEW ORDERS</a></li>
+          <% else %>
+                 <li><%= link_to 'REGISTER', new_user_registration_path %></li> 
+                 <li><%= link_to 'SIGN IN', new_user_session_path %></li>
+                 
+          <% end %>
+        
+      </ul>
+      
+    </header>
+    
+    <div class="container">
+     
+      <%= yield %>
+      
+    </div>
+    <%#<%= link_to 'New Category', new_category_path, :class =>"button", :role=>"button"  %>
+    <footer class="footer_body">
+    <footer class="footer">
+      <ul>
+        <li><%= link_to "About Us", "/about_us" %></li>
+        <li><%= link_to "Contact Us", "/contact_us" %></li>
+        <li><%= link_to "FAQ", "/faq" %></li>
+        <li><%= link_to "Sizing", "/sizing" %></li>
+      </ul>
+        
+        
+    </footer>
+    
+  </div>
+  </body>
+</html>
