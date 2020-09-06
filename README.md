@@ -2,4 +2,4 @@
 This projects runs on AWS
 
 # LINK
-http://54.216.107.255:3000/
+http://54.216.107.255/
