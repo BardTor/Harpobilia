@@ -1,5 +1,4 @@
 .headSec {
-    background: url("/assets/site/golfcourse.jpg");
     
     background-color:  #DCEFF3;
     width: 100%;
@@ -74,7 +73,6 @@ li a {
 }
 
 .container {
-      background: url("/assets/site/clubhead.png");
       background-repeat:no-repeat;
       background-position:right bottom;
       width: 100%;
