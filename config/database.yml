@@ -21,11 +21,11 @@ test:
   database: db/test.sqlite3
 
 production:
-  <<: *default
-  database: db/production.sqlite3
-# adapter: postgresql
-#   encoding: unicode
-#   database: sample_postgres_production
-#   pool: 5
-#   username: sample_postgres
-#   password:
+ #  <<: *default
+ # database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: postgres://jugfqcnhivwbue:4fb31a6e85aca3bba38f7e0b2dbfe533dc6e8bccae9e65b59fd7011297216cd5@ec2-54-235-192-146.compute-1.amazonaws.com:5432/d7rkrerk99s7l1
+  pool: 5
+  username: jugfqcnhivwbue
+  password: 4fb31a6e85aca3bba38f7e0b2dbfe533dc6e8bccae9e65b59fd7011297216cd5
