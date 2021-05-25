@@ -1,5 +1,4 @@
-# README
-This projects runs on AWS
+Server Side Development module at National College of Ireland
 
-# LINK
-http://54.216.107.255/
+
+
