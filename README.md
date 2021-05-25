@@ -1,4 +1,3 @@
-Server Side Development module at National College of Ireland
-
-
-
+Server Side Development
+Ruby on Rails
+Online Memorabilia Store
